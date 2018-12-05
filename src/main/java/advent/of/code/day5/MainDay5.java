@@ -18,7 +18,7 @@ public class MainDay5 {
   }
 
   private static int getReponseQuestion1(String input) {
-    return resolveAll(input).length();
+    return resolve(input).length();
   }
 
   
@@ -27,24 +27,14 @@ public class MainDay5 {
         .map(Character::toLowerCase)
         .distinct()
         .map(l -> input.replaceAll("(?i)"+l, ""))
-        .map(MainDay5::resolveAll)
+        .map(MainDay5::resolve)
         .map(String::length)
         .min(Comparator.naturalOrder())
         .orElse(null)
         ;
   }
   
-  private static String resolveAll(String input) {
-    String out = resolve2(input);
-    int n = input.length();
-    while(out.length() < n) {
-      n = out.length();
-      out = resolve2(out);
-    }
-    return out;
-  }
-  
-  private static String resolve2(String input) {
+  private static String resolve(String input) {
     ArrayList<Character> out = StringUtils.toCharStream(input)
       .collect(ArrayList<Character>::new, 
                     (l, c) -> {
