@@ -1,8 +1,6 @@
 package advent.of.code.day5;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 import advent.of.code.utils.LectureFichiersUtils;
 import advent.of.code.utils.StringUtils;
@@ -35,23 +33,23 @@ public class MainDay5 {
   }
   
   private static String resolve(String input) {
-    ArrayList<Character> out = StringUtils.toCharStream(input)
-      .collect(ArrayList<Character>::new, 
-                    (l, c) -> {
-                      if(l.size()>0 && react(l.get(l.size() - 1), c)) {
-                        l.remove(l.size() - 1);
+    StringBuilder out = StringUtils.toCharStream(input)
+      .collect(StringBuilder::new, 
+                    (s, c) -> {
+                      if(s.length()>0 && react(s.charAt(s.length()-1), c)) {
+                        s.deleteCharAt(s.length()-1);
                       }else{
-                        l.add(c);
+                        s.append(c);
                       }
                     },
-                    (l1, l2) -> {
-                      if(l1.size()>0 && react(l1.get(l1.size() - 1), l2.get(0))) {
-                        l1.remove(l1.size() - 1);
-                        l2.remove(0);
+                    (s1, s2) -> {
+                      if(s1.length()>0 && react(s1.charAt(s1.length()-1), s2.charAt(0))) {
+                        s1.deleteCharAt(s1.length()-1);;
+                        s2.deleteCharAt(0);
                       }
-                      l1.addAll(l2);
+                      s1.append(s2);
                     });
-    return out.stream().map(String::valueOf).collect(Collectors.joining(""));
+    return out.toString();
   }
  
   private static boolean react(char a, char b) {
