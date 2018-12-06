@@ -43,7 +43,7 @@ public class MainDay5 {
                       }
                     },
                     (s1, s2) -> {
-                      if(s1.length()>0 && react(s1.charAt(s1.length()-1), s2.charAt(0))) {
+                      while (s1.length() > 0 && s2.length() > 0 && react(s1.charAt(s1.length() - 1), s2.charAt(0))) {
                         s1.deleteCharAt(s1.length()-1);;
                         s2.deleteCharAt(0);
                       }
