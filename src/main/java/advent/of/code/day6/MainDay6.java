@@ -38,7 +38,7 @@ public class MainDay6 {
         if(closest.isPresent() && closest.get().getValue().size() == 1) {
             String areaId = closest.get().getValue().get(0).getIndent();
             if(area.containsKey(areaId)) {
-              area.put(areaId, area.get(areaId) + 1);
+              area.put(areaId, 1 + area.get(areaId));
             }
             else {
               area.put(areaId,1);
