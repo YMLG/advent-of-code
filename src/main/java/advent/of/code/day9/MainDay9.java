@@ -14,7 +14,6 @@ public class MainDay9 {
 	public static void main(String[] args) {
 		System.out.println("Question 1 - "+ getReponseQuestion1());
 		System.out.println("Question 2 - "+ getReponseQuestion2());
-
 	}
 
 	private static Integer getReponseQuestion1() {
