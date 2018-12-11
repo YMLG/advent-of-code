@@ -39,10 +39,10 @@ public class MainDay11 {
     Square maxSquare = null;
     int maxP = 0;
     for(int x=1; x<301; x++) {
-      for(int y=x; y<301; y++) {
+      for(int y=1; y<301; y++) {
         Cell corner = g.getCell(x,y);
         int powerN =0;
-        for(int size=1; size<301-y+1;size++) {
+        for(int size=1; size<301-Integer.max(x,y)+1;size++) {
           powerN = powerSquareNPlusUn(powerN, corner, size-1, g);
           if(powerN>maxP) {
             maxP = powerN;
