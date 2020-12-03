@@ -1,13 +1,8 @@
 package advent.of.code.a2020.day2;
 
-import java.util.Optional;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import advent.of.code.utils.LectureFichiersUtils;
-import advent.of.code.utils.StringUtils;
 
 public class MainDay2 {
 
