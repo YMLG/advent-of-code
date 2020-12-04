@@ -1,9 +1,7 @@
 package advent.of.code.a2020.day3;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import advent.of.code.utils.LectureFichiersUtils;
 
