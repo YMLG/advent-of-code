@@ -20,4 +20,14 @@ public class LectureFichiersUtils {
     return null;
   }
   
+  public static String getStringData(String file){
+	    Path p = Paths.get(RESOURCES, file);
+	    try {
+	      return Files.readString(p);
+	    } catch (IOException e) {
+	      e.printStackTrace();
+	    }
+	    return null;
+  }
+  
 }

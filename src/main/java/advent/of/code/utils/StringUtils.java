@@ -7,4 +7,5 @@ public class StringUtils {
   public static Stream<Character> toCharStream(String s) {
     return s.chars().mapToObj(c -> (char) c);
   }
+  
 }
